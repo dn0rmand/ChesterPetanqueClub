@@ -1,0 +1,453 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f2ec;
+  --surface: #fffefb;
+  --surface-soft: #ebe8df;
+  --ink: #15241f;
+  --muted: #53605a;
+  --line: #a9b0aa;
+  --green: #174b3b;
+  --green-2: #25644f;
+  --president-bg: #b32634;
+  --accent: #c25538;
+  --accent-soft: #f2ddd4;
+  --dot: rgba(194, 85, 56, 0.11);
+  --panel-translucent: rgba(255, 254, 251, 0.66);
+  --shadow: 0 16px 40px rgba(28, 48, 40, 0.09);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101814;
+    --surface: #17231e;
+    --surface-soft: #202d27;
+    --ink: #f3f1e9;
+    --muted: #b5c0ba;
+    --line: #55655e;
+    --green: #9bcdb7;
+    --green-2: #6caf91;
+    --president-bg: #b32634;
+    --accent: #e58767;
+    --accent-soft: #4a2b22;
+    --dot: rgba(229, 135, 103, 0.08);
+    --panel-translucent: rgba(23, 35, 30, 0.82);
+    --shadow: 0 18px 44px rgba(0, 0, 0, 0.25);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 8% 10%, var(--dot) 0 1px, transparent 2px);
+  background-position: 0 0;
+  background-size: 24px 24px;
+  color: var(--ink);
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 1.45;
+}
+
+main {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: clamp(42px, 7vw, 84px) 0 56px;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 44px;
+}
+
+.intro p {
+  max-width: 28rem;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.club-logo {
+  display: block;
+  width: clamp(175px, 21vw, 250px);
+  height: auto;
+  margin: 0 auto 24px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0;
+  font-family: "IBM Plex Serif", serif;
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.org-chart {
+  position: relative;
+}
+
+.president-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 58px;
+}
+
+.president-wrap::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 1px;
+  height: 58px;
+  background: var(--line);
+}
+
+.person {
+  position: relative;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.person-president {
+  width: min(100%, 360px);
+  padding: 28px 30px 26px;
+  border-radius: 28px 28px 12px 28px;
+  background: var(--president-bg);
+  color: #fff;
+  text-align: center;
+}
+
+.person-president .role {
+  color: rgba(255, 255, 255, .82);
+}
+
+.name {
+  margin: 0;
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.person-president .name {
+  font-size: 1.7rem;
+}
+
+.role {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.departments {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  padding-top: 42px;
+}
+
+.departments::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: var(--line);
+}
+
+.department {
+  position: relative;
+  min-width: 0;
+  padding-top: 20px;
+}
+
+.department::before {
+  content: "";
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  width: 1px;
+  height: 42px;
+  background: var(--line);
+}
+
+.dept-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 4px 14px;
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dept-icon {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  flex: 0 0 27px;
+  border-radius: 50%;
+  background: var(--surface-soft);
+  color: var(--green-2);
+}
+
+.dept-icon svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.people-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.person-card {
+  min-height: 100px;
+  padding: 20px 19px;
+  border-radius: 18px 18px 7px 18px;
+}
+
+.person-card .role {
+  overflow-wrap: anywhere;
+}
+
+.person-card.multi::after {
+  content: "Trois fonctions";
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.food-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: var(--accent);
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+.food-tag svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.to-assign {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 26px;
+  align-items: center;
+  margin-top: 38px;
+  padding: 24px 26px;
+  border: 1px dashed var(--line);
+  border-radius: 8px 24px 24px 24px;
+  background: var(--panel-translucent);
+}
+
+.to-assign h2 {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.unassigned-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.unassigned-person {
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  font-weight: 600;
+}
+
+.note {
+  margin: 14px 2px 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 840px) {
+  main {
+    width: min(100% - 28px, 680px);
+    padding-top: 34px;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    margin-bottom: 34px;
+  }
+
+  .legend {
+    justify-self: start;
+  }
+
+  .president-wrap {
+    padding-bottom: 32px;
+  }
+
+  .president-wrap::after {
+    height: 32px;
+  }
+
+  .departments {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding-top: 0;
+  }
+
+  .departments::before,
+  .department::before {
+    display: none;
+  }
+
+  .department {
+    padding-top: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .dept-heading {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  main {
+    width: min(100% - 24px, 440px);
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 14vw, 3.7rem);
+  }
+
+  .intro p {
+    font-size: 0.96rem;
+  }
+
+  .person-president {
+    border-radius: 24px 24px 10px 24px;
+  }
+
+  .departments {
+    grid-template-columns: 1fr;
+  }
+
+  .department {
+    padding-bottom: 6px;
+  }
+
+  .person-card {
+    min-height: 0;
+  }
+
+  .to-assign {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px;
+  }
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-soft: #ebe8df;
+    --ink: #15241f;
+    --muted: #53605a;
+    --line: #a9b0aa;
+    --green: #174b3b;
+    --green-2: #25644f;
+    --president-bg: #b32634;
+    --accent: #c25538;
+    --accent-soft: #f2ddd4;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html,
+  body {
+    background: #fff;
+    color: #15241f;
+  }
+
+  main {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .person {
+    box-shadow: none;
+    border: 1px solid #c8cec9;
+  }
+
+  .person-president {
+    color: #fff;
+  }
+
+  .person-president .role {
+    color: rgba(255, 255, 255, .76);
+  }
+}
