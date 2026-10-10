@@ -1,0 +1,23 @@
+{
+  "name": "chesterpetanqueclub",
+  "version": "1.0.0",
+  "description": "Chester Pétanque Club",
+  "homepage": "https://github.com/dn0rmand/ChesterPetanqueClub#readme",
+  "bugs": {
+    "url": "https://github.com/dn0rmand/ChesterPetanqueClub/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dn0rmand/ChesterPetanqueClub.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
