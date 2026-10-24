@@ -62,6 +62,39 @@ main {
   padding: clamp(42px, 7vw, 84px) 0 56px;
 }
 
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 32px;
+}
+
+.site-nav a {
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: var(--shadow);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--green-2);
+  color: var(--bg);
+  outline: none;
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--green);
+  color: var(--bg);
+}
+
 .intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -75,15 +108,6 @@ main {
   margin: 14px 0 0;
   color: var(--muted);
   font-size: 1.02rem;
-}
-
-.club-logo {
-  display: block;
-  width: clamp(175px, 21vw, 250px);
-  height: auto;
-  margin: 0 auto 24px;
-  border-radius: 18px;
-  box-shadow: var(--shadow);
 }
 
 .logo {
@@ -445,6 +469,10 @@ h1 {
   main {
     width: 100%;
     padding: 18px;
+  }
+
+  .site-nav {
+    display: none;
   }
 
   .person {

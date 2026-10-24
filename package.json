@@ -1,6 +1,7 @@
 {
   "name": "chesterpetanqueclub",
   "version": "1.0.0",
+  "private": true,
   "description": "Chester Pétanque Club",
   "homepage": "https://github.com/dn0rmand/ChesterPetanqueClub#readme",
   "bugs": {
@@ -11,13 +12,18 @@
     "url": "git+https://github.com/dn0rmand/ChesterPetanqueClub.git"
   },
   "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "http-server": "^14.1.1"
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "vite": "^6.3.5"
   }
 }
