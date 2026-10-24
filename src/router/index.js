@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import GalleryView from '../views/GalleryView.vue'
 import HomeView from '../views/HomeView.vue'
 import PeopleView from '../views/PeopleView.vue'
 
@@ -15,6 +16,12 @@ const router = createRouter({
       name: 'people',
       component: PeopleView,
       alias: ['/people'],
+    },
+    {
+      path: '/galerie',
+      name: 'gallery',
+      component: GalleryView,
+      alias: ['/gallery'],
     },
     { path: '/index.html', redirect: '/' },
     { path: '/people.html', redirect: '/equipe' },

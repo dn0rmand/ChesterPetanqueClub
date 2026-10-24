@@ -1,18 +1,14 @@
 <script setup>
-import BrandHeader from '../components/BrandHeader.vue'
 import DeptIcon from '../components/DeptIcon.vue'
 import PersonCard from '../components/PersonCard.vue'
-import SiteNav from '../components/SiteNav.vue'
 import { departments, president } from '../data/org'
 </script>
 
 <template>
   <main>
     <header>
-      <SiteNav />
-      <BrandHeader />
       <div class="intro">
-        <p>
+        <p class="max-width">
           <strong>Equipe dirigeante</strong> — organisation proposée pour répartir clairement le bureau et les
           responsabilités du club.
         </p>
