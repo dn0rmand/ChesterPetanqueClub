@@ -7,7 +7,7 @@ function githubPagesSpaFallback() {
   return {
     name: 'github-pages-spa-fallback',
     closeBundle() {
-      const dist = resolve(__dirname, 'dist')
+      const dist = resolve(__dirname, 'docs')
       const index = resolve(dist, 'index.html')
       if (existsSync(index)) {
         copyFileSync(index, resolve(dist, '404.html'))
@@ -18,4 +18,7 @@ function githubPagesSpaFallback() {
 
 export default defineConfig({
   plugins: [vue(), githubPagesSpaFallback()],
+  build: {
+    outDir: 'docs',
+  },
 })
